@@ -1,0 +1,30 @@
+﻿@using Cours.Models
+@model IEnumerable<Client>
+
+@{
+    ViewData["Title"] = "Client Page";
+}
+
+<div class="overflow-x-auto">
+    <table class="min-w-full bg-white border border-gray-300 rounded-lg">
+        <thead class="bg-blue-500 text-white">
+            <tr>
+                <th scope="col" class="px-4 py-2 text-left">Id</th>
+                <th scope="col" class="px-4 py-2 text-left">Surnom</th>
+                <th scope="col" class="px-4 py-2 text-left">Telephone</th>
+                <th scope="col" class="px-4 py-2 text-left">Adresse</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+            @foreach (var client in Model)
+            {
+                <tr class="hover:bg-gray-100">
+                    <td class="px-4 py-2">@Html.DisplayFor(modelItem => client.Id)</td>
+                    <td class="px-4 py-2">@Html.DisplayFor(modelItem => client.Surnom)</td>
+                    <td class="px-4 py-2">@Html.DisplayFor(modelItem => client.Telephone)</td>
+                    <td class="px-4 py-2">@Html.DisplayFor(modelItem => client.Adresse)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
